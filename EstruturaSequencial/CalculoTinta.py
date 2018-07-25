@@ -4,7 +4,7 @@ print "++++ Calculo de Tinta ++++"
 
 REND=3
 TAMLATA=18
-VALORLATA=18.00
+VALORLATA=80.00
 
 Metragem = float (input ("Informe o tamanho da area a ser pintada em Metro quadrados: "))
 QtdLitrosTinta = Metragem / REND
