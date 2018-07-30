@@ -2,19 +2,27 @@
 
 print "++++ Calculo de Tinta ++++"
 
-REND=3
+REND=6
 TAMLATA=18
+TAMGALAO=3.6
 VALORLATA=80.00
+VALORGALAO=25.00
 
 Metragem = float (input ("Informe o tamanho da area a ser pintada em Metro quadrados: "))
 QtdLitrosTinta = Metragem / REND
-QtdLatas = round((QtdLitrosTinta / TAMLATA),0)
+QtdLatas = (QtdLitrosTinta / TAMLATA)
+TotalLatas = QtdLatas * VALORLATA
+QtdGalao = (QtdLitrosTinta / TAMGALAO)
+TotalGalao = QtdGalao * VALORGALAO
 
-if QtdLatas < 1.0 :
-    print "Sera necessario %s Litros de tinta, voce precisa comprar 1 Lata de 18 Litros" %QtdLitrosTinta
-    Total = VALORLATA
-    print "Valor a ser pago: R$%s"%Total
-else:
-    print "Sera necessario %s Litros de tinta, voce precisa comprar %s latas de 18 Litros para essa metragem" %(QtdLitrosTinta,float(QtdLatas))
-    Total = QtdLatas * VALORLATA
-    print "Valor a ser pago: R$%s"%Total
+SobraLatas = (QtdLitrosTinta % TAMLATA)
+RestGalao = round((SobraLatas / TAMGALAO),0) 
+print "sobra", SobraLatas
+print "resto galao", RestGalao
+
+print "Voce ira utilizar %s litros de tinta: " %QtdLitrosTinta
+
+print "Quantidade de galoes de 3,16 litros: %s - Total a ser pago: %s"%(QtdGalao,TotalGalao)
+print "Quantidade de latas de 18 litros: %s - Total a ser pago: %s"%(QtdLatas,TotalLatas)
+
+
